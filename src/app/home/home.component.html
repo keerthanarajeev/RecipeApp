@@ -1,0 +1,80 @@
+
+
+<div class="home bg-dark-subtle" id="home">
+    
+
+      <div class="row">
+        <div class="col-lg-6  p-5">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://i.postimg.cc/R02PXH7H/various-vegetables-black-table-with-space-message-1220-616.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://i.postimg.cc/q7KGgpqT/360-F-382986848-lzi-Ksxpp-Ym-Wb-Yy-Bzgei9vqe9-JPOhcz-ND.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+        <div class="col-lg-6 p-5 mt-5">
+            <div class="p-3 pe-4">
+                <h1 class="text-dark" id="head">SIMPLE RECIPES MADE FOR</h1>
+                
+                <p class="" id="span" style="color: #800000;">real, actual, everyday life.</p>
+            <p class="text-dark">We're building a recipe community where people discover plant-based foods, share recipes, and connect with creators.</p>
+            </div>
+        </div>
+
+
+      </div>
+
+    <!-- <div class="heading">
+        <p>delecious food</p>
+    </div> -->
+</div>
+
+
+
+<div class="categories">
+
+
+</div>
+
+
+<div class="recipes text-center p-5">
+    <h1>The Best recipes</h1>
+
+    <div class="input-group mb-5 pt-5  ">
+        <div class="form-floating text-center">
+            <input [(ngModel)]="recipeName" name="n1" type="text" class="form-control" id="floatingInputGroup1" placeholder="Username">
+            <label for="floatingInputGroup1">Search your recipe by title or cuisine</label>
+        </div>
+        <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+
+    </div>
+
+    <!-- cards -->
+
+   <div class="row">
+        <div *ngFor="let i of recipeList | recipePipe : recipeName : 'name' | recipePipe : recipeName : 'cuisine'| paginate: {itemsPerPage: 6, currentPage: P} " class="card me-5 " style="width: 18rem; " >
+            <a routerLink="single/{{i.id}}">
+                <img [src]="i.image" class="card-img-top" alt="...">
+    
+            </a>
+            <div class="card-body">
+                <h5 class="card-title">{{i.name}}</h5>
+                <h6> Cuisin Type :{{i.cuisine}}</h6>
+            </div>
+        </div>
+        <pagination-controls class="text-center mt-5" (pageChange)="P = $event"></pagination-controls>
+   </div>
+</div>

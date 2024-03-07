@@ -1,0 +1,27 @@
+<div class="p-5 shadow">
+    <div class="card mb-3 p-4" style="max-width: 100%;">
+        <div class="row g-0">
+          <div class="col-md-5 ">
+            <img [src]="singleView.image" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <h2 class="card-title">{{singleView.name}}</h2>
+              <p>Cuisin Type : {{singleView.cuisine}}</p>
+              <p>Rating : {{singleView.rating}}
+                <span [ngClass]="singleView.rating>=4?'c1':singleView.rating>=3?'c3':'c2'"><i class="fa-solid fa-star " ></i></span>
+                </p>
+              <p class="card-text"><small class="text-body-secondary">Ingredients :{{singleView.ingredients}}</small></p>
+            <p>Instructions</p>
+            <hr>
+            <p>{{singleView.instructions}}</p>
+            <p>Preperation Time : {{singleView.prepTimeMinutes}}</p>
+
+            <p>Cooking Time : {{singleView.cookTimeMinutes}}</p>
+
+            
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

@@ -1,0 +1,32 @@
+
+.navbar{
+    background: transparent;
+}
+#home {
+    /* background-image: url("https://img.freepik.com/free-photo/flat-lay-tasty-local-food-assortment-with-copy-space_23-2148833802.jpg"); */
+  
+    height: 100vh; 
+  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+color: white;
+}
+#head{
+    font-family: "Macondo", cursive;
+}
+#span{
+    font-family: "Yellowtail", cursive;
+    font-size: 25px;
+}
+
+    /* .heading{
+       
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          
+    } */
