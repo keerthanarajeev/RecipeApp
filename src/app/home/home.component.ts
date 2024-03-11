@@ -7,21 +7,31 @@ import { RecipeService } from '../Service/recipe.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  recipeName: string = "";
+  recipeList: any[] = [];
+  filteredRecipes: any[] = [];
+  mealTypeFilter: string = '';
+  p: number = 1;
+  filterData: any = ""
 
-  recipeList:any=[]
-  recipeName:string=""
-  cuisine:string=""
-
- P:number =1;
-
-  constructor(private rs:RecipeService){}
+  // filterOptions: string[] = ['Lunch', 'Dinner'];
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit(): void {
-    this.rs.getRestaurants().subscribe((data:any)=>{
-      this.recipeList=data.recipes
-       console.log(this.recipeList);
-       
-      })
+    this.recipeService.getRecipes().subscribe(
+      (data: any) => {
+        this.recipeList = data.recipes;
+      },
+      error => {
+        console.error('Error fetching recipes:', error);
+      }
+    );
   }
+
+  changeFilterData(data: any) {
+    this.filterData = data
+  }
+
+  
 
 }

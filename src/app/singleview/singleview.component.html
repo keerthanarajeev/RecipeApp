@@ -1,23 +1,47 @@
-<div class="p-5 shadow">
-    <div class="card mb-3 p-4" style="max-width: 100%;">
+<div class="p-5 ">
+    <div class="card shadow mb-3 p-4 bg-body-secondary" style="max-width: 100%;">
         <div class="row g-0">
           <div class="col-md-5 ">
             <img [src]="singleView.image" class="img-fluid rounded-start" alt="...">
           </div>
           <div class="col-md-7">
-            <div class="card-body">
-              <h2 class="card-title">{{singleView.name}}</h2>
-              <p>Cuisin Type : {{singleView.cuisine}}</p>
-              <p>Rating : {{singleView.rating}}
+            <div class="card-body fst-italic">
+              <h2 class="card-title pb-3">{{singleView.name}} <span class="text-body-tertiary fw-light">({{singleView.cuisine}})</span></h2>
+              <p class="text-body-tertiary" style="font-size: 15px;">Rating : {{singleView.rating}}
                 <span [ngClass]="singleView.rating>=4?'c1':singleView.rating>=3?'c3':'c2'"><i class="fa-solid fa-star " ></i></span>
                 </p>
-              <p class="card-text"><small class="text-body-secondary">Ingredients :{{singleView.ingredients}}</small></p>
-            <p>Instructions</p>
-            <hr>
-            <p>{{singleView.instructions}}</p>
-            <p>Preperation Time : {{singleView.prepTimeMinutes}}</p>
 
-            <p>Cooking Time : {{singleView.cookTimeMinutes}}</p>
+                <div class="card mb-3 mt-3 " style="width: 100%;">
+                  <ul class="list-group list-group-flush ">
+                    <li class="list-group-item fst-italic"><span class="fw-bolder">Preperation Time :</span> {{singleView.prepTimeMinutes}}</li>
+                    <li class="list-group-item"><span class="fw-bolder">Cooking Time :</span> {{singleView.cookTimeMinutes}}</li>
+                    <li class="list-group-item"><span class="fw-bolder">Servings : </span>{{singleView.servings}}</li>
+                  </ul>
+                </div>
+
+
+                  <div class="accordion " id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fw-bolder fst-italic" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Ingredients
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <ul>
+                            <li *ngFor="let ingredient of singleView.ingredients">{{ingredient}}</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+            
+              <h6 class="pt-4 fw-bolder ps-3">Instructions</h6>
+            <hr>
+            <ol class="fst-italic">
+              <li *ngFor="let instruction of singleView.instructions">{{instruction}}</li>
+            </ol>
+           
 
             
             </div>

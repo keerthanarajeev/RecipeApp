@@ -1,11 +1,9 @@
 
-.navbar{
-    background: transparent;
-}
+
 #home {
-    /* background-image: url("https://img.freepik.com/free-photo/flat-lay-tasty-local-food-assortment-with-copy-space_23-2148833802.jpg"); */
+    background-image: url("https://i.postimg.cc/mZpj0mfV/Untitled-design-20.png");
   
-    height: 100vh; 
+    height: 90vh; 
   
     background-position: center;
     background-repeat: no-repeat;
@@ -13,20 +11,48 @@
     position: relative;
     text-align: center;
 color: white;
+position: relative;
+}
+
+.text-block {
+    position: absolute;
+    /* bottom: 20px;
+    right: 20px; */
+    background: transparent;
+    color: white;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+    top: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.4); /* Black partially transparent background */
 }
 #head{
     font-family: "Macondo", cursive;
 }
 #span{
-    font-family: "Yellowtail", cursive;
-    font-size: 25px;
+    font-family: "Berkshire Swash", serif;    font-size: 25px;
+}
+#para{font-family: "Playfair Display", serif;}
+.categories .btn{
+width: 10rem;
+padding: 15px;
+
+}
+#heading{font-family: "Exo 2", sans-serif;}
+
+h1{
+    font-family: "Playfair Display", serif;
 }
 
-    /* .heading{
-       
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-          
-    } */
+#anim{
+    transition: .5s ease-out;
+}
+
+#anim:hover{
+    transform: scale(1.07);
+    box-shadow: 0 4px 8px 0 ;
+}
+
+#cardtext,button{ font-family: "Playfair Display", serif;}

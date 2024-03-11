@@ -19,7 +19,7 @@ export class SingleviewComponent implements OnInit {
       this.id=data.id
       console.log(this.id);
 
-      this.service.getRestaurants().subscribe((response:any)=>{
+      this.service.getRecipes().subscribe((response:any)=>{
           this.singleView=response.recipes.find((i:any)=>i.id==this.id)
           console.log(this.singleView);
           

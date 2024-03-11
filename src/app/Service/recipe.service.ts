@@ -12,7 +12,7 @@ export class RecipeService {
 
   // access all restaurant datas
 
-  getRestaurants(){
+  getRecipes(){
     return this.http.get(`https://dummyjson.com/recipes`)
   }
 }
